@@ -1,4 +1,4 @@
-/* Reset margin and padding */
+/* Reset margin, padding, and box-sizing */
 * {
   margin: 0;
   padding: 0;
@@ -7,36 +7,45 @@
 
 /* General body styles */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Arial', sans-serif; /* Changed to Arial for a more neutral appearance */
   background-color: #f9f9f9;
   color: #333;
   line-height: 1.6;
-  padding-bottom: 50px; /* Add padding to prevent content from being hidden behind the footer */
+  padding-bottom: 50px; /* Prevents content from being hidden behind the footer */
 }
 
+/* Center and add padding inside the container */
 .container {
   width: 80%;
+  max-width: 1200px; /* Max-width for larger screens */
   margin: auto;
   overflow: hidden;
+  padding: 15px;
 }
 
-/* Header styles */
+/* Header styles with gradient background */
 header {
-  background-color: #0056b3;
+  background: linear-gradient(to right, #0056b3, #0086c9); /* Stylish gradient background */
   color: #fff;
-  padding-top: 30px;
-  min-height: 70px;
+  padding: 20px 0; /* Adjusted padding for better spacing */
   border-bottom: #0277bd 3px solid;
 }
 
 header h1 {
-  float: left;
-  font-size: 24px;
+  font-size: 2rem; /* Responsive font size */
+  margin-left: 20px; /* Added some space on the left */
 }
 
+/* Clear floats after the header */
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Navigation styles */
 header nav {
-  float: right;
-  margin-top: 10px;
+  text-align: right;
 }
 
 header nav ul {
@@ -51,21 +60,25 @@ header nav ul li {
 header nav ul li a {
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
+  padding: 5px 10px; /* Padding for clickable area */
+  transition: background-color 0.3s; /* Smooth background transition */
 }
 
-/* Main section styles */
+header nav ul li a:hover {
+  background-color: #0277bd; /* Hover effect for links */
+}
+
+/* Main section with more breathing room */
 main .container {
-  padding: 20px;
+  padding: 30px;
   background: #fff;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  margin: 40px auto; /* More space at the top and bottom */
 }
 
-/* Footer styles */
+/* Footer with a less invasive look */
 footer {
-  background-color: #333;
+  background: linear-gradient(to left, #0056b3, #0086c9); /* Stylish gradient background */
   color: #fff;
   text-align: center;
   padding: 10px;
@@ -73,13 +86,29 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
+  font-size: 0.8rem; /* Smaller font size for less emphasis */
 }
 
 footer p {
   margin: 10px 0;
 }
 
+/* Responsive typography */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
 /* Remove list item bullets */
 ul {
   list-style-type: none;
 }
+
+/* Enhance the visual hierarchy */
+/* h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; } */
+
+/* Additional styles for better
